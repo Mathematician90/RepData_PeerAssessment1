@@ -106,7 +106,7 @@ df1<-activitywithimput[which(activitywithimput$day=="weekend"),]
 df2<-activitywithimput[which(activitywithimput$day=="weekday"),]
 df11<-aggregate(steps~interval,df1,FUN = "mean")
 df22<-aggregate(steps~interval,df2,FUN = "mean")
-par(mfrow=c(2,1))
+par(mfrow=c(2,1),fin=c(7,5))
 plot(df11$interval, df11$steps, type="l", ylab="Mean steps", xlab="Interval", main="Number of Steps by weekend")
 plot(df22$interval, df22$steps, type="l", ylab="Mean steps", xlab="Interval", main="Number of Steps by weekdays")
 ```
