@@ -133,6 +133,7 @@ plot(averages$interval, averages$steps, type=&quot;l&quot;, ylab=&quot;Average N
 <li>Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.</li>
 <li>Create a new dataset that is equal to the original dataset but with the missing data filled in.</li>
 </ul>
+<p>Missing values mean that people did not use activity tracker or it might be broken or there was no battery energy. So that we can set the missing values to 0.</p>
 <pre class="r"><code># Missing values mean that people did not use activity tracker or it might be broken or there was no battery energy. So that we can set the missing values to 0.
 activitywithimput&lt;-activity
 for(i in 1:nrow(activitywithimput))
@@ -153,7 +154,13 @@ hist(sums$TotalStepsTaken,ylab=&quot;Frequency&quot;,xlab=&quot;Total Number of 
 <pre><code>## [1] 9354.23</code></pre>
 <pre class="r"><code>median(sums$TotalStepsTaken)</code></pre>
 <pre><code>## [1] 10395</code></pre>
-<p>After imputing missing values new mean and median are less than old mean and median ### Are there differences in activity patterns between weekdays and weekends? * Make a panel plot containing a time series plot (i.e. type = “l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).</p>
+<p>After imputing missing values new mean and median are less than old mean and median</p>
+</div>
+<div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level3">
+<h3>Are there differences in activity patterns between weekdays and weekends?</h3>
+<ul>
+<li>Make a panel plot containing a time series plot (i.e. type = “l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).</li>
+</ul>
 <pre class="r"><code>activitywithimput$day&lt;-weekdays(as.Date(activitywithimput$date))
 for (i in 1:nrow(activitywithimput))
 {

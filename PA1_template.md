@@ -114,6 +114,8 @@ sum(is.na(activity$steps))
 * Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 * Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
+Missing values mean that people did not use activity tracker or it might be broken or there was no battery energy. So that we can set the missing values to 0.
+
 ```r
 # Missing values mean that people did not use activity tracker or it might be broken or there was no battery energy. So that we can set the missing values to 0.
 activitywithimput<-activity
@@ -152,7 +154,9 @@ median(sums$TotalStepsTaken)
 ## [1] 10395
 ```
 After imputing missing values new mean and median are less than old mean and median
+
 ### Are there differences in activity patterns between weekdays and weekends?
+
 * Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 
 ```r
